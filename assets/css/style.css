@@ -1,4 +1,13 @@
 body {
-    background-color: orange;
-    background-image: url()
+    background-image: url(../images/halftone-yellow.png);
+}
+
+.container {
+    width: 960px;
+}
+
+.jumbotron {
+    margin-top: 100px;
+    background-color: whitesmoke;
+    text-align: center;
 }
