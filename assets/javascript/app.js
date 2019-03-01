@@ -63,8 +63,7 @@ $(document).ready(function () {
 
     var scoreCount = 0;
 
-    var timerCounter = 31;
-    var timeleft = 31
+    var timerCount = 30;
 
     $("#startBtn").on("click", function () {
         infoContainer.style.display = "none";
@@ -72,23 +71,27 @@ $(document).ready(function () {
         function timerDisplay() {
             var timer = $("#timerContainer");
             timerContainer.style.display = "block";
-            timer.html("<h3>Time Left: " + timerCounter + " Seconds</h3> <hr>");
+            timer.html("<h3>Time Left: " + timerCount + " Seconds</h3> <hr>");
 
             setInterval(1000);
             function tic() {
-                timerCounter--;
+                timerCount--;
             }
             tic();
         }
         timerDisplay();
 
         function quizDisplay() {
-            var question = $("#quizContainer")
-            quizContainer.style.display = "block";
+            var question = $("#questionContainer");
+            questionContainer.style.display = "block";
+
+            var choices = $("#choiceContainer")
+            choiceContainer.style.display = "block";
+            
 
             for (i = 0; i < questions.length; i++) {
                 question.html("<h2>" + questions[i].question + "</h2>");
-
+                choices.html("<h2>" + questions[i].choices + "</h2>");
 
             }
         }
