@@ -66,23 +66,20 @@ $(document).ready(function () {
     var timerCount = 30;
 
     $("#startBtn").on("click", function () {
-        $(".jumbotron").append(timerCount);
+        
+        function timerSetup() {
+            var timer = $("#timerContainer");
+            timer.html("<h2>Time Left: " +  timerCount + " Seconds</h2>");
+            timerContainer.style.display = "block";
+        }
+        timerSetup();
 
         for (i = 0; i < questions.length; i++) {
-            $(".jumbotron").text(questions[i].question);
+            // $(".jumbotron").text(questions[i].question);
 
         }
 
     });
 
-    function scoreCheck() {
-        for (i = 0; i < questions.length; i++) {
-            if (response === answer) {
-                score++;
-            }
-        }
-        $(".jumbotron").text("Your score is " + score + " out of " + questions.length + "!");
 
-    }
-    scoreCheck();
 });
