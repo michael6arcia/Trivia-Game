@@ -62,9 +62,27 @@ $(document).ready(function () {
         answer: 1816
     }];
 
+    var score = 0;
+
+    var timerCount = 30;
 
     $("#startBtn").on("click", function () {
-        
+        $(".jumbotron").append(timerCount);
+
+        for (i = 0; i < questions.length; i++) {
+            $(".jumbotron").append(questions[i].question);
+
+        }
+
     });
 
+    function scoreCheck() {
+        for (i = 0; i < questions.length; i++) {
+            if (response === answer) {
+                score++;
+            }
+        }
+
+    }
+    scoreCheck();
 });
