@@ -82,6 +82,7 @@ $(document).ready(function () {
                 score++;
             }
         }
+        $(".jumbotron").text("Your score is " + score + " out of " + questions.length + "!");
 
     }
     scoreCheck();
