@@ -61,25 +61,39 @@ $(document).ready(function () {
         answer: 1816
     }];
 
-    var score = 0;
+    var scoreCount = 0;
 
-    var timerCount = 30;
+    var timerCounter = 31;
+    var timeleft = 31
 
     $("#startBtn").on("click", function () {
-        
-        function timerSetup() {
+        infoContainer.style.display = "none";
+
+        function timerDisplay() {
             var timer = $("#timerContainer");
-            timer.html("<h2>Time Left: " +  timerCount + " Seconds</h2>");
             timerContainer.style.display = "block";
-        }
-        timerSetup();
+            timer.html("<h3>Time Left: " + timerCounter + " Seconds</h3> <hr>");
 
-        for (i = 0; i < questions.length; i++) {
-            // $(".jumbotron").text(questions[i].question);
-
+            setInterval(1000);
+            function tic() {
+                timerCounter--;
+            }
+            tic();
         }
+        timerDisplay();
+
+        function quizDisplay() {
+            var question = $("#quizContainer")
+            quizContainer.style.display = "block";
+
+            for (i = 0; i < questions.length; i++) {
+                question.html("<h2>" + questions[i].question + "</h2>");
+
+
+            }
+        }
+        quizDisplay();
 
     });
-
 
 });
