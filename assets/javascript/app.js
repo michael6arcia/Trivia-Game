@@ -69,9 +69,8 @@ $(document).ready(function () {
         $(".jumbotron").append(timerCount);
 
         for (i = 0; i < questions.length; i++) {
-            $(".jumbotron").append(questions[i].question);
+            $(".jumbotron").text(questions[i].question);
 
-            if ();
         }
 
     });
