@@ -134,7 +134,9 @@ $(document).ready(function () {
         quizDisplay();
 
         function quizFunction() {
-            
+            if (timerCount === 0) {
+
+            }
 
         }
         quizFunction();
@@ -161,6 +163,9 @@ $(document).ready(function () {
                 infoContainer.style.display = "block";
                 scoreContainer.style.display = "none";
                 resetBtn.style.display = "none";
+
+                // Reset all forms?
+
             });
 
         }
