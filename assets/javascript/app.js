@@ -63,7 +63,7 @@ $(document).ready(function () {
 
     var scoreCount = 0;
 
-    var timerCount = 61;
+    var timerCount = 11;
 
     var intervalId;
 
@@ -82,11 +82,12 @@ $(document).ready(function () {
 
                 timerCount--;
                 timer.html("<h3>Time Left: " + timerCount + " Seconds</h3> <hr>");
-    
+
                 if (timerCount === 0) {
-    
+
                     timerCount = 0;
                     clearInterval(intervalId);
+                    scoreDisplay();
                 }
             }
             tic();
@@ -97,7 +98,7 @@ $(document).ready(function () {
             var question = $("#questionContainer");
             questionContainer.style.display = "block";
 
-            var choices = $("#choiceContainer")
+            var choices = $("#choiceContainer");
             choiceContainer.style.display = "block";
 
 
@@ -108,8 +109,37 @@ $(document).ready(function () {
             for (i = 0; i < choices.length; i++) {
                 choices.html("<h2>" + questions[0].choices + "</h2>");
             }
+
         }
         quizDisplay();
+
+        function scoreDisplay() {
+            if (timerCount === 0) {
+                questionContainer.style.display = "none";
+                choiceContainer.style.display = "none";
+                timerContainer.style.display = "none";
+
+                var score = $("#scoreContainer");
+                scoreContainer.style.display = "block";
+                score.html("<h2> Your Score: " + scoreCount + "</h2><br><hr>");
+
+                var reset = $("#resetBtn");
+                resetBtn.style.display = "block";
+
+            }
+        }
+        scoreDisplay();
+
+        function reset() {
+
+            $("#reset").on("click", function () {
+                infoContainer.style.display = "block";
+                scoreContainer.style.display = "none";
+                resetBtn.style.display = "none";
+            });
+
+        }
+        reset();
 
     });
 
