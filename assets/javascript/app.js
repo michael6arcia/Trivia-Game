@@ -61,6 +61,8 @@ $(document).ready(function () {
         answer: "1816"
     }];
 
+    var choiceOptions = "";
+
     var scoreCount = 0;
 
     var timerCount = 61;
@@ -135,7 +137,7 @@ $(document).ready(function () {
 
         function quizFunction() {
             if (timerCount === 0) {
-
+                $("")
             }
 
         }
