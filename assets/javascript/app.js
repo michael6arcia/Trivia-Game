@@ -68,6 +68,7 @@ $(document).ready(function () {
     var intervalId;
 
     $("#startBtn").on("click", function () {
+        timerCount = 11
         infoContainer.style.display = "none";
 
         function timerDisplay() {
