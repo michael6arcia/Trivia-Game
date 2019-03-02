@@ -96,19 +96,12 @@ $(document).ready(function () {
         timerDisplay();
 
         function quizDisplay() {
-            var question = $("#questionContainer");
-            questionContainer.style.display = "block";
-
-            var choices = $("#choiceContainer");
-            choiceContainer.style.display = "block";
-
+            var quiz = $("#quizBox");
+            quizBox.style.display = "block";
 
             for (i = 0; i < questions.length; i++) {
-                question.html("<h2>" + questions[0].question + "</h2>");
-            }
-
-            for (i = 0; i < choices.length; i++) {
-                choices.html("<h2>" + questions[0].choices + "</h2>");
+                $("#questionContainer").html("<h2>" + questions[0].question + "</h2>");
+                $("#choiceContainer").html("<h2>" + questions[0].choices + "</h2>");
             }
 
         }
@@ -116,8 +109,7 @@ $(document).ready(function () {
 
         function scoreDisplay() {
             if (timerCount === 0) {
-                questionContainer.style.display = "none";
-                choiceContainer.style.display = "none";
+                quizBox.style.display = "none";
                 timerContainer.style.display = "none";
 
                 var score = $("#scoreContainer");
